@@ -1,4 +1,4 @@
-package com.nplushone.common.config;
+package com.nplushone.demo.common.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

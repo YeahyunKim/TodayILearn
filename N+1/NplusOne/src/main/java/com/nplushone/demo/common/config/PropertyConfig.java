@@ -1,4 +1,4 @@
-package com.nplushone.common.config;
+package com.nplushone.demo.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
