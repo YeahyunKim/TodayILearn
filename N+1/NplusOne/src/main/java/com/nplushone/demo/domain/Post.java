@@ -3,6 +3,7 @@ package com.nplushone.demo.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "posts")
 @Getter
+@Setter
 @NoArgsConstructor
 public class Post {
     @Id
@@ -25,4 +27,8 @@ public class Post {
 
     private String title;
 
+    public Post(User user, String title) {
+        this.user = user;
+        this.title = title;
+    }
 }

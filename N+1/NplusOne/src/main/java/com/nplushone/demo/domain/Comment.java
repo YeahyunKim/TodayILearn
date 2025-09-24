@@ -3,10 +3,12 @@ package com.nplushone.demo.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "comments")
 @Getter
+@Setter
 @NoArgsConstructor
 public class Comment {
     @Id
@@ -18,4 +20,8 @@ public class Comment {
     private Post post;
 
     private String comment;
+
+    public Comment(String comment) {
+        this.comment = comment;
+    }
 }
