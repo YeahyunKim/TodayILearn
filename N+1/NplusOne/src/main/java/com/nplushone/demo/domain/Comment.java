@@ -17,4 +17,5 @@ public class Comment {
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
+    private String comment;
 }
