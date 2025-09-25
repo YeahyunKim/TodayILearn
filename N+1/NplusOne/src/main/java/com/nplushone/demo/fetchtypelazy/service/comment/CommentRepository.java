@@ -1,7 +1,7 @@
-package com.nplushone.demo.service.comment;
+package com.nplushone.demo.fetchtypelazy.service.comment;
 
 
-import com.nplushone.demo.domain.Comment;
+import com.nplushone.demo.fetchtypelazy.lazyDomain.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

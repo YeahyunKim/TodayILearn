@@ -1,4 +1,4 @@
-package com.nplushone.demo.domain;
+package com.nplushone.demo.fetchtypelazy.lazyDomain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,11 +1,11 @@
-package com.nplushone.demo.dummy;
+package com.nplushone.demo.dummy.fetchtypelazy;
 
-import com.nplushone.demo.domain.Comment;
-import com.nplushone.demo.domain.Post;
-import com.nplushone.demo.domain.User;
-import com.nplushone.demo.service.comment.CommentRepository;
-import com.nplushone.demo.service.post.PostRepository;
-import com.nplushone.demo.service.user.UserRepository;
+import com.nplushone.demo.fetchtypelazy.lazyDomain.Comment;
+import com.nplushone.demo.fetchtypelazy.lazyDomain.Post;
+import com.nplushone.demo.fetchtypelazy.lazyDomain.User;
+import com.nplushone.demo.fetchtypelazy.service.comment.CommentRepository;
+import com.nplushone.demo.fetchtypelazy.service.post.PostRepository;
+import com.nplushone.demo.fetchtypelazy.service.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,7 +29,6 @@ public class CreateDummyData {
     @Rollback(value = false)
     void createUsers() {
         for (int u = 1; u <= 3; u++) {
-            Long id = (long) u;
             User user = new User("유저" + u, "user" + u + "@mail.com");
             userRepo.save(user);
         }
@@ -43,9 +42,21 @@ public class CreateDummyData {
     @Rollback(value = false)
     void createPostsForUser1() {
         User user1 = userRepo.findById(1L).orElseThrow();
+        User user2 = userRepo.findById(2L).orElseThrow();
+        User user3 = userRepo.findById(3L).orElseThrow();
 
         for (int p = 1; p <= 3; p++) {
             Post post = new Post(user1, "포스트" + p);
+            postRepo.save(post);
+        }
+
+        for (int p = 4; p <= 6; p++) {
+            Post post = new Post(user2, "포스트" + p);
+            postRepo.save(post);
+        }
+
+        for (int p = 7; p <= 9; p++) {
+            Post post = new Post(user3, "포스트" + p);
             postRepo.save(post);
         }
     }
